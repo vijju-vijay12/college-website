@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Swarnandhra</title>
+    <link rel="stylesheet" href="css/main_style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+    <style>
+       
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+       
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: transparent; 
+            border: none; 
+            margin: 15% auto;
+            padding: 0;
+            width: 80%;
+            max-width: 600px; 
+            text-align: center;
+        }
+
+        .close-btn {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #ccc;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal img {
+    width: 100%; 
+    max-width: 2400px;
+    height: auto; 
+    display: block;
+    border-radius: 8px;
+}
+
+    </style>
+</head>
+<body>
+    
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img src="C:\Users\ES\College\College-Website\image\popup.jpg" alt="Popup Image">
+        </div>
+    </div>
+
+    <section class="header">
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <span class="icon" onclick="hidemenu()">&#10005;</span>
+                <ul>
+                    <li><a href="index.html">Home</a></button></li>
+                    <li><a href="Admission_page.html">Admission</a></button></li>
+                    <li><a href="courses.html">Course</a></button></li>
+                    <li><a href="fees_page.html">Fees</a></button></li>
+                    <li><a href="Contact_page.html">Contact</a></button></li>
+                </ul>
+            </div> 
+            <span class="icon" onclick="showmenu()">&#9776;</span>
+        </nav>
+        <div class="text-box">
+            <h1>Swarnandhra Engineering College</h1>
+            <p>The Swarnandhra Engineering College provides a platform to learn and develop technical skills,<br>to shape their future in various fields of engineering.</p>
+            <a href="https://www.swarnandhra.ac.in/photogallery.php" class="hero-btn">Explore Now</a>
+        </div>
+    </section>
+
+    <section class="course" id="course_call">
+        <h1>Courses We Offer</h1>
+        <p>Swarnandhra College of Engineering and Technology offers three of the best technical courses for students</p>
+        <div class="row">
+            <div class="course-col">
+                <h2>B.Tech</h2>
+                <p>The B.Tech course is a full-time four-year (eight semesters) Bachelor's Degree in Technology. The degree helps interested students in setting up a sound academic base for an advanced career in Technology and Engineering.</p>
+            </div>
+            <div class="course-col">
+                <h2>M.Tech</h2>
+                <p>The M.Tech course is a full-time two-year (four semesters) Master's Degree in Technology. The degree helps interested students in setting up a sound academic base for an advanced career in Technology and Engineering.</p>
+            </div>
+            <div class="course-col">
+                <h2>Diploma</h2>
+                <p>The Diploma course is a full-time three-year (six semesters) program in Engineering. The degree helps interested students in setting up a sound academic base for a career in Engineering and Technology.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="campus">
+        <h1>Our Campus</h1>
+        <div class="row">
+            <div class="campus-col">
+                <img src="image/education2.jpg" alt="Education">
+                <div class="layer">
+                    <h3>Education</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="image/environment.png" alt="Environment">
+                <div class="layer">
+                    <h3>Environment</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="image/sports2.jpg" alt="Sports">
+                <div class="layer">
+                    <h3>Sports</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="facilities">
+        <h1>Our Facilities</h1>
+        <p>Facilities provided for Students by Swarnandhra College Of Engineering</p>
+        <div class="row">
+            <div class="facilities-col">
+                <img src="C:\Users\ES\College\College-Website\image\lib1.jpg" alt="library">
+                <h3>Library</h3>
+                <p>The purpose of the library is to support educational and personal growth by offering a well-maintained space, a diverse range of resources, and reliable access to information and services.</p>
+            </div>
+            <div class="facilities-col">
+                <img src="image/gym.jpg" alt="Gym">
+                <h3>Gym</h3>
+                <p>The focus of the gym is to enhance physical fitness and wellness by maintaining clean facilities and providing safe, well-equipped environments for exercise and training.</p>
+            </div>
+            <div class="facilities-col">
+                <img src="C:\Users\ES\College\College-Website\image\labs3.jpg" alt="computer labs">
+                <h3>Computer Labs</h3>
+                <p>The focus of the computer labs is to support academic and professional growth by providing a clean, well-maintained environment with up-to-date hardware and software</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="ctn">
+        <h1>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+    </section>
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>The Swarnandhra College at Narspur provides specialized education and training in various fields of engineering.</p>
+        <p id="copyright">Made By &#10084; AIML Students</p>
+    </section>
+
+    <script src="javascript/main_script.js"></script>
+
+   
+    <script>
+        window.onload = function() {
+            var modal = document.getElementById("imageModal");
+            var span = document.getElementsByClassName("close-btn")[0];
+
+            modal.style.display = "block"; 
+
+           
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+           
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

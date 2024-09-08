@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>Online Pay Fees - SWRN</title>
+  <link rel="stylesheet" href="css/fees_style.CSS">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body>
+  <section class="header">
+    <nav>
+     
+
+        <div class="nav-links" id="navLinks">
+            <span class="icon" onclick="hidemenu()">&#10005;</span>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Admission_page.html">Admission</a></li>
+                <li><a href="courses.html">Course</a></li>
+                <li><a href="fees_page.html">Fees</a></li>
+                <li><a href="Contact_page.html">Contact</a></li>
+            </ul>
+        </div> 
+        <span class="icon" onclick="showmenu()">&#9776;</span>
+    </nav>
+
+  <form onsubmit="return pay()">
+    <div class="wrapper">
+      <div class="r_form_wrap">
+        
+        <div class="title">
+          <p id="header_fees">Fees Details</p>
+        </div>
+        
+        <div class="r_form">
+            <div class="input_wrap">
+              
+              <label for="course">Course</label>
+              <div class="input_item">
+                  <i class="fa fa-bars" aria-hidden="true" id="icon"></i>
+                <select id="course" name="course" class="input" required onchange="updateBranchOptions()">
+                <option value="select"> Select the Course</option>
+                <option value="mtech"> M.Tech</option>
+                <option value="btech"> B.Tech</option>
+                <option value="diploma"> Diploma</option>
+                </select>
+              </div>
+              
+              <br><br>
+              
+              <label for="branch">Branch</label>
+              <div class="input_item">
+                  <i class="fa fa-bars" aria-hidden="true" id="icon"></i>
+                <select id="branch" name="branch" class="input" required>
+                <option value="select"> Select the Branch</option>
+                <option value="aiml"> AIML</option>
+                <option value="aids"> AIDS</option>
+                <option value="cse"> CSE</option>
+                <option value="civil"> Civil</option>
+                <option value="mech"> MECH</option>
+                <option value="ece"> ECE</option>
+                <option value="eee"> EEE</option>
+                <option value="cs"> CS</option>
+                <option value="ds"> DS</option>
+                <option value="it"> IT</option>
+                </select>
+              </div>
+              
+              <br><br>
+              
+              <input type="button" class="button" value="Get details" onclick="pay()">
+            </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  </section>
+
+  <div class="none_div"></div>
+
+<script src="javascript/fees_script.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>	
+<script>
+  var navLinks = document.getElementById("navLinks");
+
+  function showmenu(){
+    navLinks.style.right="0";
+  }
+
+  function hidemenu(){
+    navLinks.style.right="-200px";
+  }
+
+  function pay(){
+    var course = document.getElementById("course").value;
+    var branch = document.getElementById("branch").value;
+
+    if(course === "btech") {
+      window.location.href = "btech_fees.html";
+    } else if(course === "mtech") {
+      window.location.href = "mtech_fees.html";
+    } else if(course === "diploma") {
+      window.location.href = "diploma_fees.html";
+    } else {
+      alert("Please select a valid course and branch");
+      return false;
+    }
+  }
+
+  // Update branch options based on the selected course
+  function updateBranchOptions() {
+    var course = document.getElementById("course").value;
+    var branchSelect = document.getElementById("branch");
+
+    // Clear all existing options
+    branchSelect.innerHTML = '';
+
+    if (course === 'mtech') {
+      // M.Tech relevant branches
+      var mtechBranches = ['AIM', 'AID', 'CSE', 'MBA','MCA','SE','PES'];
+
+      mtechBranches.forEach(function(branch) {
+        var option = document.createElement('option');
+        option.value = branch.toLowerCase();
+        option.text = branch;
+        branchSelect.appendChild(option);
+      });
+    } else if (course === 'btech' || course === 'diploma') {
+      // B.Tech or Diploma branches
+      var allBranches = ['AIML', 'AIDS', 'CSE', 'Civil', 'MECH', 'ECE', 'EEE', 'CS', 'DS', 'IT'];
+
+      allBranches.forEach(function(branch) {
+        var option = document.createElement('option');
+        option.value = branch.toLowerCase();
+        option.text = branch;
+        branchSelect.appendChild(option);
+      });
+    } else {
+      // If no valid course selected, just show a "Select the Branch" option
+      var option = document.createElement('option');
+      option.value = 'select';
+      option.text = 'Select the Branch';
+      branchSelect.appendChild(option);
+    }
+  }
+</script>
+</body>
+</html>

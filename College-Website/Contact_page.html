@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GGU</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="css/contact_style.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+          
+            
+            <div class="nav-links" id="navLinks">
+                <span class="icon" onclick="hidemenu()">&#10005;</span>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Admission_page.html">Admission</a></li>
+                    <li><a href="courses.html">Course</a></li>
+                    <li><a href="fees_page.html">Fees</a></li>
+                    <li><a href="Contact_page.html">Contact</a></li>
+                </ul>
+            </div> 
+            <span class="icon" onclick="showmenu()">&#9776;</span>
+        </nav>
+        <div class="wrapper">
+		    <div class="r_form_wrap">
+			    <div class="title">
+				    <p>Contact Details</p>
+			    </div>
+			    <div class="r_form">
+				    <p><strong>Follow Us:</strong></p>
+                    <ul>
+                        
+                        <li><a href="https://www.facebook.com/p/Swarnandhra-College-of-Engineering-Technology-100079723502587/" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li><br>
+						<li><a href="" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></li><br>
+                    </ul>
+
+				    <p><strong>Email Us:</strong></p>
+				    <p><i class="fa fa-envelope"></i>info@swarnandhra.ac.in</p><br>
+					<p><strong>Cell:</strong></p>
+				    <p><i class="fa fa-envelope"></i>9346610099</p>
+			    </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="none_div"></div>
+</body>
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showmenu() {
+        navLinks.style.right = "0";
+    }   
+    function hidemenu() {
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+</html>
